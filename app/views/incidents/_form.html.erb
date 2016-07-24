@@ -18,7 +18,9 @@
 
   <div class="field">
     <%= f.label :severity %>
-    <%= f.number_field :severity, min: 1, max: 10 %>
+    <%= f.range_field :severity, min: 1, max: 10, step: 1, class: 'small-11 columns' %>
+    <span class='num float-right'><%= f.object.severity %></span>
+    <br/>
   </div>
 
   <div class="field">

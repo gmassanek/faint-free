@@ -13,5 +13,9 @@ $('a[data-method=delete]').bind('click', function(e) {
   })
 
   window.location = '/incidents';
+});
 
+$('input[type=range]').bind('change', function(e) {
+  $input = $(e.currentTarget);
+  $input.next('.num').text($input.val());
 });
