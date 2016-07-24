@@ -1,0 +1,32 @@
+<li class='callout success small-12 columns'>
+  <h3>
+    <%= incident.event %>
+  </h3>
+
+  <div>
+    <div>
+      <span>Occurred:</span>
+      <%= incident.created_at.to_formatted_s(:long) %>
+    </div>
+
+    <div>
+      <span>Severity:</span>
+      <%= incident.severity %>
+    </div>
+
+    <div>
+      <span>Location:</span>
+      <%= incident.location %>
+    </div>
+
+    <div>
+      <span>Note:</span>
+      <%= incident.note %>
+    </div>
+  </div>
+
+  <div class='row actions'>
+    <%= link_to 'Edit', edit_incident_path(incident), class: 'button' %>
+    <%= link_to 'Destroy', incident, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
+  </div>
+</li>

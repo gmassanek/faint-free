@@ -4,10 +4,20 @@
     <title>FaintFree</title>
     <%= csrf_meta_tags %>
 
+    <%= stylesheet_link_tag '/assets/foundation.min.css', media: 'all' %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   </head>
 
   <body>
-    <%= yield %>
+    <div id='container small-12 columns'>
+      <%= yield %>
+    </div>
   </body>
+
+  <%= javascript_tag "window._token = '#{form_authenticity_token}'" %>
+  <%= javascript_include_tag '/assets/jquery' %>
+  <%= javascript_include_tag '/assets/foundation.min.js' %>
+  <%= javascript_include_tag '/assets/app.bundle.js' %>
 </html>

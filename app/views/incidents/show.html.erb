@@ -1,8 +1,17 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div data-alert id="notice" class="callout primary">
+    <%= notice %>
+  </div>
+<% end %>
 
 <p>
   <strong>Event:</strong>
   <%= @incident.event %>
+</p>
+
+<p>
+  <strong>Occurred:</strong>
+  <%= @incident.created_at.to_formatted_s(:long) %>
 </p>
 
 <p>
@@ -20,5 +29,5 @@
   <%= @incident.location %>
 </p>
 
-<%= link_to 'Edit', edit_incident_path(@incident) %> |
-<%= link_to 'Back', incidents_path %>
+<%= link_to 'Edit', edit_incident_path(@incident), class: 'button expand small-12 columns' %>
+<%= link_to 'Back', incidents_path, class: 'button expand small-12 columns' %>

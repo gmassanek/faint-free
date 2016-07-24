@@ -1,33 +1,17 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div id="notice" class="callout primary">
+    <%= notice %>
+  </div>
+<% end %>
 
 <h1>Incidents</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Event</th>
-      <th>Severity</th>
-      <th>Note</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class='row'>
+  <%= link_to 'New Incident', new_incident_path, class: 'button success small-12 columns'  %>
+</div>
 
-  <tbody>
-    <% @incidents.each do |incident| %>
-      <tr>
-        <td><%= incident.event %></td>
-        <td><%= incident.severity %></td>
-        <td><%= incident.note %></td>
-        <td><%= incident.location %></td>
-        <td><%= link_to 'Show', incident %></td>
-        <td><%= link_to 'Edit', edit_incident_path(incident) %></td>
-        <td><%= link_to 'Destroy', incident, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Incident', new_incident_path %>
+<div class='row'>
+  <ul class='listings'>
+    <%= render @incidents %>
+  </ul>
+</div>
