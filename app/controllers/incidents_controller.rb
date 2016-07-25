@@ -4,7 +4,10 @@ class IncidentsController < ApplicationController
   # GET /incidents
   # GET /incidents.json
   def index
-    @incidents = Incident.all
+    @incidents = Incident.feed
+    @stats = {
+      today: Stats.for(Incident.today)
+    }
   end
 
   # GET /incidents/1

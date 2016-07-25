@@ -6,7 +6,7 @@
   <div>
     <div>
       <span>Occurred:</span>
-      <%= incident.created_at.to_formatted_s(:long) %>
+      <%= incident.created_at.strftime('%b %d %y %I:%M %p') %>
     </div>
 
     <div>

@@ -13,21 +13,22 @@
  *= require_tree .
  *= require_self
  */
-
-ul.listings {
+ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-ul.listings li {
+ul.incidents li {
   padding: 10px;
 }
 
-ul.listings li a  {
+ul.incidents li a  {
   margin-left: 10px;
 }
 
 .actions {
   margin-top: 10px;
 }
+
+
