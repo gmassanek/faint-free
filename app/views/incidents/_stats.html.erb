@@ -1,0 +1,14 @@
+<div class='row'>
+  <div class='stats callout primary'>
+    <% @stats.each do |time, stats| %>
+      <h6><%= time.to_s.humanize %>:</h3>
+      <ul>
+        <% stats.each do |key, val| %>
+          <li>
+            <%= key %>: <%= val %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </ul>
+</div>

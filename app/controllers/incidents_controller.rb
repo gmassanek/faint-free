@@ -6,7 +6,8 @@ class IncidentsController < ApplicationController
   def index
     @incidents = Incident.feed
     @stats = {
-      today: Stats.for(Incident.today)
+      today: Stats.for(Incident.today),
+      this_week: Stats.for(Incident.this_week),
     }
   end
 

@@ -1,25 +1,20 @@
-<% if notice %>
-  <div id="notice" class="callout primary">
-    <%= notice %>
-  </div>
-<% end %>
-
-<h1>Incidents</h1>
-
-<ul class='stats callout primary'>
-  <label>Today's Stats:</label>
-  <% @stats[:today].each do |key, val| %>
-    <li>
-      <%= key %>: <%= val %>
-    </li>
-  <% end %>
-</ul>
-
 <div class='row'>
+  <% if notice %>
+    <div id="notice" class="callout primary">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <h1>Incidents</h1>
+</div>
+
+<%= render template: 'incidents/_stats', locals: { stats: @stats } %>
+
+<div>
   <%= link_to 'New Incident', new_incident_path, class: 'button success small-12 columns'  %>
 </div>
 
-<div class='row'>
+<div>
   <ul class='incidents'>
     <%= render @incidents %>
   </ul>
